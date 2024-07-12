@@ -33,7 +33,7 @@
         </h3>
       </div>
     
-      <div class="col-lg-4 mb-md-3">
+      <div class="col-lg-4 mb-3">
         <div>    
             Browse the newest Suppliers added to the NFDA Supplier Directory on this page or SEARCH to find the resource you need. 
         </div>
@@ -47,9 +47,9 @@
           </div>
           
           <div class="col-12">          
-            <div class="form-row flex-nowrap">
+            <div class="form-row">
               
-              <div class="col">      
+              <div class="col-12 col-md mb-3 mb-md-0">      
                 <DropDownList Id="CategoryDropDown" Class="form-control w-100" DataField="CategoryDropDown" DataSourceId="dsCategories" DataTextField="Category" DataValueField="Category" DataType="string" AppendDataBoundItems="True">
                   <ListItem Value="">- Select Category -</ListItem>
                 </DropDownList>  
