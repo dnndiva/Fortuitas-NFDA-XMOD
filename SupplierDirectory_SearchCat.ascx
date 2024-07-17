@@ -11,14 +11,15 @@
 
     <ControlDataSource Id="dsCategories"
       CommandText="
-        SELECT DISTINCT Category FROM NFDA_Supplier WHERE NOT(Category = '')
+        -- SELECT DISTINCT Category FROM NFDA_Supplier WHERE NOT(Category = '')
+        SELECT DISTINCT SupplierCategoryName AS Category FROM NFDA_Supplier_Category_XREF
       " 
     />        
 
   <style>
     div.ResourceSearch .ResourceSearchRight{color:white;width: 50%;float: right;}
     div.ResourceSearch .ResourceSearchLeft{margin-right: 20px;}
-    div.ResourceSearch {background: #F5F5F5;margin: 0 auto;padding: 20px;}
+    div.ResourceSearch {background: #F8F8F8;margin: 0 auto;padding: 20px;}
     div.ResourceSearch Input{width:92%; margin-bottom: 20px;height: 34px;border: none;border-radius: 25px;margin-top: 20px;padding-left: 20px; float:left;}
     div.ResourceSearch .PrimaryAction{background: white;text-decoration: none;font-size: 24px;padding: 5px 10px;float: right;}
   

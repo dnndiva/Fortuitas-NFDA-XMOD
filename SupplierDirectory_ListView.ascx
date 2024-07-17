@@ -169,7 +169,7 @@
     PrevPageCaption="&laquo;"
     LastPageCaption="Last"
     ShowFirstLast="True">
-    <div class="pager row align-items-center mx-0 my-3 py-1">
+    <div class="pager row align-items-center mx-0 mt-3 py-1">
       <div class="pagination col-12 col-sm mr-auto">{Pager}</div>
       <div class="pager-info font-sime-small my-2">Page <strong>{PageNumber}</strong> of {PageCount}</div>
     </div>
@@ -236,8 +236,8 @@
     </style>
 
     <div class="suppliers-directory">
-      <div class="p-1 bg-blue d-block d-md-none"></div>
-      <div class="row m-0 bg-blue d-none d-md-flex">
+      <div class="p-1 mt-4 bg-blue d-block d-md-none"></div>
+      <div class="row mt-4 mx-0 bg-blue d-none d-md-flex">
         <div class="col-md-3 text-white pt-3 pb-2">
             Name
         </div>
@@ -281,7 +281,7 @@
           <small class="strong text-blue uppercase opacity-50 mb-half d-block d-md-none">Categories</small>
           [[AssociatedCategories]]
         </div>
-        <div class="col-md-1 pt-2 pb-1">
+        <div class="col-md-1 py-2">
           <xmod:Select>
             <Case CompareType="text" Value='[[Logo]]' Operator="<>" Expression="">
               <img src="https://portal.nfda.org/Portals/0/assets/images/account/[[Logo]]" class="supplierLogo"/>
@@ -314,125 +314,135 @@
     <style type="text/css">      
       .nfda-table-head {background-color: #009FD7!important; color:#FFFFFF!important; font-weight:bold; padding: 0.75rem;}
       .nfda-table-head th {color:#FFFFFF!important;}
+      .supplier-detail {padding: 28px 34px;}
 
-      .supplierLogo {width:100px;}
+      .supplierLogo {width:200px;}
     </style>
     
     
-    <div>
-           <xmod:Select>
-                <Case CompareType="text" Value='[[Logo]]' Operator="<>" Expression="">
-                      <img src="https://portal.nfda.org/Portals/0/assets/images/account/[[Logo]]" class="supplierLogo"/>
-                </Case>
-            </xmod:Select>      
-      
-      <h1>
-        [[Name]]
-      </h1>
+    <div class="supplier-detail border">
+      <div class="row">
+        <div class="col order-1">
+          <h2>
+            [[Name]]
+          </h2>
+
+            [--
+            <div class="row mt-2">
+              <!-- AccountNumber -->
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Account Number</strong>
+              </div>
+              <div class="col-10">
+                  [[AccountNumber]]
+              </div>
+            </div>
+            --]
 
 
-<dl class="row">
-  [--
-    <!-- AccountNumber -->
-    <dt class="col-2">
-        <strong>Account Number</strong>
-    </dt>
-    <dd class="col-10">
-        [[AccountNumber]]
-    </dd>
- 	--]
+            <!-- Address -->
+            <div class="row mt-2">
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Address</strong>
+              </div>
+              <div class="col">
+                  <div class="row">
+                      <div class="col-12">[[StreetAddress1]]</div>
+                      <div class="col-12">[[City]], [[State]]</div>
+                      <div class="col-12">[[PostalCode]]</div>
+                  </div>
+              </div>
+            </div>
 
+            [--
+            <div class="row mt-2">
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Primary Contact</strong>
+              </div>
+              <div class="col">
+                  [[PrimaryContact]]
+              </div>
+            </div>
+            --]
 
-    <!-- Address -->
-    <dt class="col-2">
-        Address
-    </dt>
-    <dd class="col-10">
-        <div class="row">
-            <div class="col-12">[[StreetAddress1]]</div>
-            <div class="col-12">[[City]], [[State]]</div>
-            <div class="col-12">[[PostalCode]]</div>
-        </div>
-    </dd>
+            <div class="row mt-2">
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Phone</strong>
+              </div>
+              <div class="col">
+                  [[Phone]]
+              </div>
+            </div>
 
-  [--
-    <dt class="col-2">
-        <strong>Primary Contact</strong>
-    </dt>
-    <dd class="col-10">
-        [[PrimaryContact]]
-    </dd>
-  --]
+            <div class="row mt-2">
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Email</strong>
+              </div>
+              <div class="col">
+                  <a href="mailto:[[Email]]">[[Email]]</a>
+              </div>    
+            </div>    
 
-    <dt class="col-2">
-        <strong>Phone</strong>
-    </dt>
-    <dd class="col-10">
-        [[Phone]]
-    </dd>
+            <div class="row mt-2">
+              <div class="col-12 col-md-3 col-lg-2">
+                  <strong>Website</strong>
+              </div>
+              <div class="col">
+                  <a href="[[Website]]" target="_blank">[[Website]]</a>
+              </div> 
+            </div>  
 
-    <dt class="col-2">
-        <strong>Email</strong>
-    </dt>
-    <dd class="col-10">
-        <a href="mailto:[[Email]]">[[Email]]</a>
-    </dd>        
+            <div class="row mt-4 mb-3">
+              <div class="col-12">
+                  <strong>Associated Categories</strong>
+              </div>
+              <div class="col">
+                  [[AssociatedCategories]]
+              </div>
+            </div>
 
-    <dt class="col-2">
-        <strong>Website</strong>
-    </dt>
-    <dd class="col-10">
-        <a href="[[Website]]" target="_blank">[[Website]]</a>
-    </dd>        
+            <div class="row">
+              <div class="col">
+                [--
 
-    <dt class="col-2">
-        <strong>&nbsp;</strong>
-    </dt>
-    <dd class="col-10">
-        &nbsp;
-    </dd>  
-
-    <dt class="col-2">
-        <strong>Associated Categories</strong>
-    </dt>
-    <dd class="col-10">
-        <a href="[[Website]]" target="_blank">[[AssociatedCategories]]</a>
-    </dd>      
-
-
-</dl>
-
-[--
-
-        id
-        ,AccountNumber
-        ,Name
-        ,Type
-        ,StreetAddress1
-        ,City
-        ,State
-        ,PostalCode
-        ,Country
-        ,AddressComposite
-        ,Latitude
-        ,Longitude
-        ,PrimaryContact
-        ,Website
-        ,Email
-        ,Phone
-        ,NfdaInternationShipper
-        ,NfdaSponsorshipLevel
-        ,Category
-        --Attributes
---]
-
-
-      <br />&nbsp;<br/>
-      <br />&nbsp;<br/>
-      
-      <xmod:ReturnLink CssClass="dnnSecondaryAction" Text="&lt;&lt; Return" />    
-      <br />&nbsp;<br/>
+                        id
+                        ,AccountNumber
+                        ,Name
+                        ,Type
+                        ,StreetAddress1
+                        ,City
+                        ,State
+                        ,PostalCode
+                        ,Country
+                        ,AddressComposite
+                        ,Latitude
+                        ,Longitude
+                        ,PrimaryContact
+                        ,Website
+                        ,Email
+                        ,Phone
+                        ,NfdaInternationShipper
+                        ,NfdaSponsorshipLevel
+                        ,Category
+                        --Attributes
+                --]
+                <hr class="my-2">
+                <xmod:ReturnLink CssClass="btn btn-blue mt-3" Text="<em class='fa fa-chevron-left fa-sm pr-2'></em>Back to List" />
+              </div>
+            </div>
             
-  </div>
+        </div>
+
+        <div class="col-12 col-sm-auto order-0 order-sm-2">
+          <xmod:Select>
+            <Case CompareType="text" Value='[[Logo]]' Operator="<>" Expression="">
+              <img src="https://portal.nfda.org/Portals/0/assets/images/account/[[Logo]]" class="supplierLogo mb-4"/>
+            </Case>
+          </xmod:Select>
+        </div>
+      </div>
+
+            
+    </div>
   </DetailTemplate>
 </xmod:Template>
